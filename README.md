@@ -16,8 +16,9 @@ gntp | awk '{print $1}'
 ```
 
 run from cron every hour
+E=`/usr/local/bin/gntp | awk '{print $1}'`
 ```
-if [ /usr/local/bin/gntp | awk '{print $1}' = "${reboot_hour}" ]; then
+if [ "${E}" = "${reboot_hour}" ]; then
   # sleep for an hour and then reboot
   sleep 3600 && shutdown -r now
 fi
