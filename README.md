@@ -17,7 +17,8 @@ gntp | awk '{print $1}'
 
 run from cron every hour
 ``
-"E=``/usr/local/bin/gntp | awk '{print $1}'``"
+``` E=`/usr/local/bin/gntp | awk '{print $1}'` ```
+
 ```
 ```
 if [ "${E}" = "${reboot_hour}" ]; then
