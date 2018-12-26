@@ -2,7 +2,7 @@
 Small NTP client written in GO. Used to schedule reboots on servers who's time is running in a fixed loop, and do not contain their own NTP service.
 
 ## Usage
-Place somewhere in your bath and then invoke without any arguments:
+Place somewhere in your path and invoke without any arguments:
 ```
 gntp
 
