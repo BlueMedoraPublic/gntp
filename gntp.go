@@ -5,17 +5,26 @@ import (
 	"fmt"
 	"time"
 	"strconv"
+	"flag"
 
 	"github.com/beevik/ntp"
 )
 
-// version 0.1.1
-
+const version string   = "0.1.1"
 const ntpServer string = "pool.ntp.org"
 
 // print the time and exit. Print errors to Stderr and exit
 // with code 1
 func main() {
+	var printVersion bool
+	flag.BoolVar(&printVersion, "version", false, "print the version and exit")
+	flag.Parse()
+
+	if printVersion == true {
+		fmt.Println(version)
+		os.Exit(0)
+	}
+
 	t, err := GetTime()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, err.Error())

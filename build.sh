@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=`cat gntp.go | grep version | awk '{print $3}'`
+VERSION=`grep 'const version' gntp.go | awk '{print $5}' | tr -d '"'`
 if [ -z "$VERSION" ]
 then
       echo "Failed to get version from gntp.go"
